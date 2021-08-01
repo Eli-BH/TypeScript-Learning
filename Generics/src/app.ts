@@ -21,3 +21,15 @@ promise.then(data =>{
 })
 
 //we can make our own Generics as well
+// function merge(objA: object, objB: object){
+//     return Object.assign(objA, objB);
+// }
+
+//we can turn this into a generic function which
+function merge<T, U>(objA: T, objB: U){ //this infers the intersection of T & U, now the return can exist as one Object
+    return Object.assign(objA, objB);
+}
+
+const mergedObj = merge({name: "Max"}, {age: 3000});
+// we cant access the new obeject as one object becuase TS doesnt know that it exists
+
