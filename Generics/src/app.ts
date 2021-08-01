@@ -42,3 +42,19 @@ function merge<T extends object, U extends object>(objA: T, objB: U){ //The T ty
 
 const mergedObj = merge({name: "Max" , hobbies: ["Sports", "Video Games"]}, {age: 30});
 // we cant access the new obeject as one object becuase TS doesnt know that it exists
+
+interface Lengthy{
+    length: number; 
+}
+
+function countAndDescribe<T extends Lengthy>(element: T): [T, string]{
+    let description = "Got no value."
+    if(element.length > 0){
+        description = "Got 1 element"
+    } else if ( element.length > 1){
+        description = 'Got ' + element.length + " elements. "
+    }
+    return [element, description]; 
+}
+
+console.log(countAndDescribe(["Sports", "Cooking"]))
