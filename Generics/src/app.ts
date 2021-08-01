@@ -25,11 +25,20 @@ promise.then(data =>{
 //     return Object.assign(objA, objB);
 // }
 
+// //we can turn this into a generic function which
+// function merge<T, U>(objA: T, objB: U){ //this infers the intersection of T & U, now the return can exist as one Object
+//     return Object.assign(objA, objB);
+// }
+
+// const mergedObj = merge({name: "Max"}, {hobbies: ["Sports", "Video Games"]});
+// // we cant access the new obeject as one object becuase TS doesnt know that it exists
+
+
+// Constraints
 //we can turn this into a generic function which
-function merge<T, U>(objA: T, objB: U){ //this infers the intersection of T & U, now the return can exist as one Object
+function merge<T extends object, U extends object>(objA: T, objB: U){ //The T type can be any object of any structure but it must be an object
     return Object.assign(objA, objB);
 }
 
-const mergedObj = merge({name: "Max"}, {age: 3000});
+const mergedObj = merge({name: "Max" , hobbies: ["Sports", "Video Games"]}, {age: 30});
 // we cant access the new obeject as one object becuase TS doesnt know that it exists
-
