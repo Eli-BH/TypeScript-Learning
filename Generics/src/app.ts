@@ -85,8 +85,23 @@ class DataStorage<T>{
     }
 }
 
-const textStorage = new DataStorage<string | number>(); 
+const textStorage = new DataStorage<string >(); 
 textStorage.addItem('Eli')
 textStorage.addItem('Jack')
 textStorage.removeItem("Jack")
 console.log(textStorage.getItems())
+
+//we can use numbers or other types as well in the generic
+
+const numberStorage = new DataStorage<number>(); 
+
+
+//this specific version doesnt work well with objects
+const objStorage = new DataStorage<object>(); 
+objStorage.addItem({name: "Eli"})
+objStorage.addItem({name: "Jack"})
+
+objStorage.removeItem({name: "Jack"})
+console.log(objStorage.getItems())
+
+
