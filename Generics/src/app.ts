@@ -85,7 +85,7 @@ class DataStorage<T>{
     }
 }
 
-const textStorage = new DataStorage<string>(); 
+const textStorage = new DataStorage<string | number>(); 
 textStorage.addItem('Eli')
 textStorage.addItem('Jack')
 textStorage.removeItem("Jack")
