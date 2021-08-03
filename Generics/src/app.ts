@@ -69,7 +69,7 @@ function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U){
 console.log(extractAndConvert({name: "Eli"}, 'name'))
 
 //Generic Classes
-class DataStorage<T>{
+class DataStorage<T extends number | string | boolean>{
     private data: T[] = []
 
     addItem(item: T){
@@ -97,11 +97,13 @@ const numberStorage = new DataStorage<number>();
 
 
 //this specific version doesnt work well with objects
+//we change it to only work with primative types
 const objStorage = new DataStorage<object>(); 
+const maxObj = {name: "Jack"}
 objStorage.addItem({name: "Eli"})
 objStorage.addItem({name: "Jack"})
 
-objStorage.removeItem({name: "Jack"})
+objStorage.removeItem(maxObj)
 console.log(objStorage.getItems())
 
 
