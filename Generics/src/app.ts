@@ -106,4 +106,6 @@ objStorage.addItem({name: "Jack"})
 objStorage.removeItem(maxObj)
 console.log(objStorage.getItems())
 
+//Generic Utility Types 
+
 
