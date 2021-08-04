@@ -69,7 +69,7 @@ function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U){
 console.log(extractAndConvert({name: "Eli"}, 'name'))
 
 //Generic Classes
-class DataStorage<T extends number | string | boolean>{
+class DataStorage<T extends number | string | boolean>{ 
     private data: T[] = []
 
     addItem(item: T){
