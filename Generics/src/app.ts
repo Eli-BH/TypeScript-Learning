@@ -120,7 +120,7 @@ interface CourseGoal {
 // }
 
 function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
-        let courseGoal: Partial<CourseGoal> = {};
+        let courseGoal: Partial<CourseGoal> = {}; //Constructs a type with all properties of Type set to optional. This utility will return a type that represents all subsets of a given type.
         courseGoal.title = title; 
         courseGoal.description = description;
         courseGoal.completeUntil = date; 
